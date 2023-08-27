@@ -1,5 +1,6 @@
 import { NextPage, GetStaticProps, NextPageContext } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 type SSGProps = {
   message: string;
@@ -16,6 +17,9 @@ const SSG: NextPage<SSGProps> = ({ message }: SSGProps) => {
       <main>
         <p>このページは静的サイト生成によってビルド時に生成されたページです</p>
         <p>{message}</p>
+        <Link href="/ssr">
+          <a>Go to SSR</a>
+        </Link>
       </main>
     </div>
   );
